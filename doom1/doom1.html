@@ -1223,7 +1223,9 @@
 
       var Module = {
         preRun: [],
-        postRun: [],
+        postRun: function() {
+          Module.requestFullscreen(document.getElementById('pointerLock').checked, document.getElementById('resize').checked)
+        },
         print: (function() {
           var element = document.getElementById('output');
           if (element) element.value = ''; // clear browser cache
@@ -1296,6 +1298,7 @@
           if (text) Module.printErr('[post-exception status] ' + text);
         };
       };
+      
     </script>
     <script async type="text/javascript" src="doom1.js"></script>
   </body>
