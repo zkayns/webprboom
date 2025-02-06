@@ -1223,9 +1223,7 @@
 
       var Module = {
         preRun: [],
-        postRun: function() {
-          Module.requestFullscreen(document.getElementById('pointerLock').checked, document.getElementById('resize').checked)
-        },
+        postRun: [],
         print: (function() {
           var element = document.getElementById('output');
           if (element) element.value = ''; // clear browser cache
